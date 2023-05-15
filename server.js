@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
@@ -24,7 +22,7 @@ app.get('/api/notes', function (err, res) {
     }
     res.json(notesData);
 });
-//Post Route, Post, Write post to db.json then render
+//Post Route
 app.post('/api/notes', function (req, res) {
     try {
 
@@ -46,7 +44,7 @@ app.post('/api/notes', function (req, res) {
    
     }
 });
-//Delete note
+//Delete
 app.delete('/api/notes/:id', function (req, res) {
     try {
         notesData = fs.readFileSync('./db/db.json', 'utf8');
@@ -69,17 +67,17 @@ app.delete('/api/notes/:id', function (req, res) {
     }
 });
 
-app.get('/notes', function (req, res) {
-    res.sendFile(path.join(__dirname, '/public/notes.html'));
-
+app.get('./notes', function (req, res) {
+    return res.sendFile(path.join(__dirname, './db.db.json'));
 });
+
+app.get('/notes', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public/notes.html'));
+});
+
 
 app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, 'public/index.html'));
-});
-
-app.get('./notes', function (req, res) {
-    return res.sendFile(path.join(__dirname, './db.db.json'));
 });
 
 app.listen(PORT, function () {
