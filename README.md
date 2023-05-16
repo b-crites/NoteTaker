@@ -9,5 +9,4 @@
 ## Troubles
 ### Unable to deploy to Heroku (Having troubles connecting to GitHub)
 
-## GitHub Link
-### https://github.com/b-crites/NoteTaker
+
