@@ -5,4 +5,9 @@
 ### Adds notes with a title and body
 ### Takes you from homepage to notes page
 ### Deletes note on button click
+
+## Troubles
 ### Unable to deploy to Heroku (Having troubles connecting to GitHub)
+
+##GitHub Link
+### https://github.com/b-crites/NoteTaker
