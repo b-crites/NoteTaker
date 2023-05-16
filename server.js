@@ -2,10 +2,10 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 
-const app = express();
 const PORT = process.env.PORT || 3001;
-
 let notesData = [];
+const app = express();
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -17,7 +17,7 @@ app.get('/api/notes', function (err, res) {
         notesData = JSON.parse(notesData);
 
     } catch (err) {
-        console.log('\n error (in app.get.catch):');
+        console.log('\n error (GET):');
         console.log(err);
     }
     res.json(notesData);
@@ -81,5 +81,5 @@ app.get('*', function (req, res) {
 });
 
 app.listen(PORT, function () {
-    console.log('server is listening ' + PORT);
+    console.log('server is listening to port ' + PORT);
 });
